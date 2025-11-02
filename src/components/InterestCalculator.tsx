@@ -1,26 +1,44 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
 
-const InterestCalculator = () => {
-  const [amount, setAmount] = useState("");
-  const [days, setDays] = useState("");
+interface InterestCalculatorProps {
+  amount?: number;
+}
+
+const InterestCalculator = ({ amount: externalAmount = 0 }: InterestCalculatorProps) => {
+  const [days, setDays] = useState([14]);
+  const [amount, setAmount] = useState(externalAmount);
+
+  useEffect(() => {
+    setAmount(externalAmount);
+  }, [externalAmount]);
 
   const calculateInterest = () => {
-    const amountNum = parseFloat(amount);
-    const daysNum = parseInt(days);
-    
+    const amountNum = amount;
+    const daysNum = days[0];
+
     if (isNaN(amountNum) || isNaN(daysNum) || amountNum <= 0 || daysNum <= 0) {
-      return { dailyRate: 0, dailyInterest: 0, totalInterest: 0, total: 0 };
+      return {
+        dailyRate: 0,
+        dailyInterest: 0,
+        totalInterest: 0,
+        total: 0,
+      };
     }
 
-    const dailyRate = amountNum <= 100000 ? 0.25 : 0.19;
+    const dailyRate = 0.25;
     const dailyInterest = (amountNum * dailyRate) / 100;
     const totalInterest = dailyInterest * daysNum;
     const total = amountNum + totalInterest;
 
-    return { dailyRate, dailyInterest, totalInterest, total };
+    return {
+      dailyRate,
+      dailyInterest,
+      totalInterest,
+      total,
+    };
   };
 
   const { dailyRate, dailyInterest, totalInterest, total } = calculateInterest();
@@ -34,30 +52,29 @@ const InterestCalculator = () => {
         <CardDescription>Рассчитайте сумму займа с процентами</CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
-        <div className="grid gap-4 md:grid-cols-2">
-          <div className="space-y-2">
-            <Label htmlFor="amount">Сумма займа (₸)</Label>
-            <Input
-              id="amount"
-              type="number"
-              placeholder="0"
-              value={amount}
-              onChange={(e) => setAmount(e.target.value)}
-              className="border-border/50 focus:ring-gold"
-              min="0"
-            />
+        <div className="space-y-2">
+          <Label htmlFor="amount">Сумма займа (₸)</Label>
+          <div className="text-3xl font-bold text-gold">
+            {amount.toLocaleString('ru-KZ')} ₸
           </div>
-          <div className="space-y-2">
-            <Label htmlFor="days">Срок (дней)</Label>
-            <Input
-              id="days"
-              type="number"
-              placeholder="0"
-              value={days}
-              onChange={(e) => setDays(e.target.value)}
-              className="border-border/50 focus:ring-gold"
-              min="0"
-            />
+        </div>
+
+        <div className="space-y-4">
+          <div className="flex justify-between items-center">
+            <Label htmlFor="days">Срок займа: {days[0]} дней</Label>
+          </div>
+          <Slider
+            id="days"
+            min={14}
+            max={30}
+            step={1}
+            value={days}
+            onValueChange={setDays}
+            className="w-full"
+          />
+          <div className="flex justify-between text-xs text-muted-foreground">
+            <span>14 дней</span>
+            <span>30 дней</span>
           </div>
         </div>
 
@@ -85,10 +102,11 @@ const InterestCalculator = () => {
           </div>
         </div>
 
-        <div className="text-sm text-muted-foreground space-y-1 p-4 bg-secondary/5 rounded-lg border border-secondary/10">
-          <p className="font-medium text-foreground mb-2">Условия:</p>
-          <p>• До 100,000 ₸ - 0.25% в день</p>
-          <p>• Свыше 100,000 ₸ - 0.19% в день</p>
+        <div className="text-sm text-muted-foreground space-y-2 p-4 bg-muted/20 rounded-lg">
+          <p className="font-medium text-foreground">ℹ️ Важная информация:</p>
+          <p>• Гарантийный срок: 30 дней по 0.25% в день</p>
+          <p>• Досрочное погашение без штрафов</p>
+          <p>• Продление займа возможно</p>
         </div>
       </CardContent>
     </Card>

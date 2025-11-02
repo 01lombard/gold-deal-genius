@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import * as React from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -16,7 +17,11 @@ const currentDate = new Date().toLocaleDateString('ru-RU', {
   year: 'numeric' 
 });
 
-const GoldCalculator = () => {
+interface GoldCalculatorProps {
+  onPriceChange?: (price: number) => void;
+}
+
+const GoldCalculator = ({ onPriceChange }: GoldCalculatorProps) => {
   const [weight, setWeight] = useState("");
   const [purity, setPurity] = useState<keyof typeof goldPrices>("585");
 
@@ -27,6 +32,11 @@ const GoldCalculator = () => {
   };
 
   const totalPrice = calculatePrice();
+
+  // Update parent component when price changes
+  React.useEffect(() => {
+    onPriceChange?.(totalPrice);
+  }, [totalPrice, onPriceChange]);
 
   return (
     <Card className="w-full shadow-[var(--shadow-elegant)] border-border/50 hover:shadow-[var(--shadow-gold)] transition-all duration-300">

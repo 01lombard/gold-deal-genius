@@ -1,3 +1,4 @@
+import { useState } from "react";
 import GoldCalculator from "@/components/GoldCalculator";
 import InterestCalculator from "@/components/InterestCalculator";
 import ServicesSection from "@/components/ServicesSection";
@@ -7,6 +8,8 @@ import HowItWorksSection from "@/components/HowItWorksSection";
 import { Gem } from "lucide-react";
 
 const Index = () => {
+  const [goldPrice, setGoldPrice] = useState(0);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -35,14 +38,11 @@ const Index = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(212,175,55,0.1),transparent_50%)]" />
         <div className="relative max-w-6xl mx-auto px-4 py-20 md:py-32">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-block mb-6 px-4 py-2 rounded-full bg-gold/10 border border-gold/20">
-              <span className="text-sm font-medium text-gold">🏆 Лидер рынка ломбардных услуг</span>
-            </div>
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent leading-tight">
-              Выгодный выкуп золота в Алматы
+              Выгодный выкуп золота
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Профессиональная оценка за 7 минут • Честные цены • Выплата сразу наличными • 20 отделений по городу
+              Профессиональная оценка за 7 минут • Честные цены • Выплата сразу наличными
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <a
@@ -98,8 +98,8 @@ const Index = () => {
             Рассчитайте предварительную стоимость сделки прямо сейчас
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <GoldCalculator />
-            <InterestCalculator />
+            <GoldCalculator onPriceChange={setGoldPrice} />
+            <InterestCalculator amount={goldPrice} />
           </div>
         </div>
       </section>
