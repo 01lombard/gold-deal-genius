@@ -45,13 +45,13 @@ const BenefitsSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:+77771234567"
-                className="px-8 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-semibold shadow-[var(--shadow-gold)]"
+                className="px-8 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 font-semibold shadow-[var(--shadow-gold)] hover:scale-105 hover:shadow-[0_15px_50px_-15px_hsl(43_100%_48%/0.4)] animate-fade-in"
               >
                 Позвонить сейчас
               </a>
               <a
                 href="#calculators"
-                className="px-8 py-3 rounded-lg bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-colors font-semibold"
+                className="px-8 py-3 rounded-lg bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-all duration-300 font-semibold hover:scale-105 animate-fade-in"
               >
                 Рассчитать стоимость
               </a>
