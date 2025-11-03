@@ -14,7 +14,7 @@ const services = [
   {
     icon: Shield,
     title: "Надежность",
-    description: "Официальная лицензия и полная безопасность сделок",
+    description: "Полная безопасность и конфиденциальность сделок",
   },
   {
     icon: Clock,

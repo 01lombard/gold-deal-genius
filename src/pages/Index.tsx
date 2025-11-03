@@ -114,7 +114,6 @@ const Index = () => {
       <footer className="border-t border-border/50 bg-card/50 py-8">
         <div className="max-w-6xl mx-auto px-4 text-center text-sm text-muted-foreground">
           <p>© 2024 Золотой Ломбард. Все права защищены.</p>
-          <p className="mt-2">Лицензия на осуществление ломбардной деятельности</p>
         </div>
       </footer>
     </div>
