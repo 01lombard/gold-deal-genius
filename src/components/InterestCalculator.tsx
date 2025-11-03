@@ -28,7 +28,8 @@ const InterestCalculator = ({ amount: externalAmount = 0 }: InterestCalculatorPr
       };
     }
 
-    const dailyRate = 0.25;
+    // Автоматическое переключение ставки в зависимости от суммы
+    const dailyRate = amountNum <= 100000 ? 0.25 : 0.19;
     const dailyInterest = (amountNum * dailyRate) / 100;
     const totalInterest = dailyInterest * daysNum;
     const total = amountNum + totalInterest;
@@ -104,7 +105,9 @@ const InterestCalculator = ({ amount: externalAmount = 0 }: InterestCalculatorPr
 
         <div className="text-sm text-muted-foreground space-y-2 p-4 bg-muted/20 rounded-lg">
           <p className="font-medium text-foreground">ℹ️ Важная информация:</p>
-          <p>• Гарантийный срок: 30 дней по 0.25% в день</p>
+          <p>• Гарантийный срок: 30 дней</p>
+          <p>• До 100 000 ₸: 0.25% в день</p>
+          <p>• Свыше 100 000 ₸: 0.19% в день</p>
           <p>• Досрочное погашение без штрафов</p>
           <p>• Продление займа возможно</p>
         </div>
