@@ -66,7 +66,7 @@ const Index = () => {
                 <div className="text-sm text-muted-foreground">лет на рынке</div>
               </div>
               <div className="p-4">
-                <div className="text-3xl md:text-4xl font-bold text-gold mb-2">80%</div>
+                <div className="text-3xl md:text-4xl font-bold text-gold mb-2">95%</div>
                 <div className="text-sm text-muted-foreground">от стоимости</div>
               </div>
               <div className="p-4">

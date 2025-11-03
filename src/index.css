@@ -9,75 +9,75 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    --foreground: 0 0% 0%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 0 0% 0%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 43 74% 49%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 43 100% 48%;
+    --primary-foreground: 0 0% 0%;
     
-    --secondary: 222 47% 11%;
+    --secondary: 238 42% 22%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 96%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 43 74% 49%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 43 100% 48%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 43 74% 49%;
+    --ring: 43 100% 48%;
 
     --radius: 0.75rem;
 
-    --gold: 43 74% 49%;
-    --gold-light: 48 89% 70%;
-    --gold-dark: 38 65% 40%;
-    --navy: 222 47% 11%;
-    --navy-light: 222 47% 25%;
+    --gold: 43 100% 48%;
+    --gold-light: 48 100% 60%;
+    --gold-dark: 38 100% 35%;
+    --navy: 238 42% 22%;
+    --navy-light: 238 42% 35%;
     
-    --gradient-gold: linear-gradient(135deg, hsl(43 74% 49%) 0%, hsl(48 89% 70%) 100%);
-    --gradient-navy: linear-gradient(135deg, hsl(222 47% 11%) 0%, hsl(222 47% 25%) 100%);
-    --shadow-gold: 0 10px 40px -10px hsl(43 74% 49% / 0.3);
-    --shadow-elegant: 0 4px 20px -2px hsl(222 47% 11% / 0.1);
+    --gradient-gold: linear-gradient(135deg, hsl(43 100% 48%) 0%, hsl(48 100% 60%) 100%);
+    --gradient-navy: linear-gradient(135deg, hsl(238 42% 22%) 0%, hsl(238 42% 35%) 100%);
+    --shadow-gold: 0 10px 40px -10px hsl(43 100% 48% / 0.3);
+    --shadow-elegant: 0 4px 20px -2px hsl(238 42% 22% / 0.1);
   }
 
   .dark {
-    --background: 222 47% 11%;
+    --background: 238 42% 22%;
     --foreground: 0 0% 98%;
 
-    --card: 222 47% 15%;
+    --card: 238 42% 28%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 222 47% 15%;
+    --popover: 238 42% 28%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 43 74% 49%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 43 100% 48%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 222 47% 25%;
+    --secondary: 238 42% 35%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 222 47% 20%;
+    --muted: 238 42% 30%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 43 74% 49%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 43 100% 48%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 222 47% 20%;
-    --input: 222 47% 20%;
-    --ring: 43 74% 49%;
+    --border: 238 42% 30%;
+    --input: 238 42% 30%;
+    --ring: 43 100% 48%;
   }
 }
 
@@ -88,5 +88,6 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Century Gothic', 'CenturyGothic', 'AppleGothic', sans-serif;
   }
 }
