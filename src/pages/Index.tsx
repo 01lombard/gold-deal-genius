@@ -6,6 +6,7 @@ import ContactSection from "@/components/ContactSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import { Gem } from "lucide-react";
+import heroImage from "@/assets/hero-image.png";
 
 const Index = () => {
   const [goldPrice, setGoldPrice] = useState(0);
@@ -36,46 +37,60 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-gold/5 via-background to-secondary/5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(212,175,55,0.1),transparent_50%)]" />
-        <div className="relative max-w-6xl mx-auto px-4 py-20 md:py-32">
-          <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent leading-tight">
-              Выгодный выкуп золота
-            </h2>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Профессиональная оценка за 7 минут • Честные цены • Выплата сразу наличными
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <a
-                href="tel:+77771234567"
-                className="px-8 py-4 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 font-semibold text-lg shadow-[var(--shadow-gold)] hover:scale-105"
-              >
-                Позвонить сейчас
-              </a>
-              <a
-                href="#calculators"
-                className="px-8 py-4 rounded-lg bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-all duration-300 font-semibold text-lg"
-              >
-                Рассчитать стоимость
-              </a>
+        <div className="relative max-w-6xl mx-auto px-4 py-12 md:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            {/* Text Content */}
+            <div className="text-center lg:text-left">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent leading-tight">
+                Выгодный выкуп золота
+              </h2>
+              <p className="text-lg md:text-xl text-muted-foreground mb-8">
+                Профессиональная оценка за 7 минут • Честные цены • Выплата сразу наличными
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+                <a
+                  href="tel:+77771234567"
+                  className="px-8 py-4 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 font-semibold text-lg shadow-[var(--shadow-gold)] hover:scale-105"
+                >
+                  Позвонить сейчас
+                </a>
+                <a
+                  href="#calculators"
+                  className="px-8 py-4 rounded-lg bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-all duration-300 font-semibold text-lg"
+                >
+                  Рассчитать стоимость
+                </a>
+              </div>
+              
+              {/* Stats */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 bg-card/50 rounded-lg border border-border/50">
+                  <div className="text-3xl font-bold text-gold mb-1">10+</div>
+                  <div className="text-sm text-muted-foreground">лет на рынке</div>
+                </div>
+                <div className="p-4 bg-card/50 rounded-lg border border-border/50">
+                  <div className="text-3xl font-bold text-gold mb-1">95%</div>
+                  <div className="text-sm text-muted-foreground">от стоимости</div>
+                </div>
+                <div className="p-4 bg-card/50 rounded-lg border border-border/50">
+                  <div className="text-3xl font-bold text-gold mb-1">7 мин</div>
+                  <div className="text-sm text-muted-foreground">оценка</div>
+                </div>
+                <div className="p-4 bg-card/50 rounded-lg border border-border/50">
+                  <div className="text-3xl font-bold text-gold mb-1">24/7</div>
+                  <div className="text-sm text-muted-foreground">работаем</div>
+                </div>
+              </div>
             </div>
-            
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-              <div className="p-4">
-                <div className="text-3xl md:text-4xl font-bold text-gold mb-2">10+</div>
-                <div className="text-sm text-muted-foreground">лет на рынке</div>
-              </div>
-              <div className="p-4">
-                <div className="text-3xl md:text-4xl font-bold text-gold mb-2">95%</div>
-                <div className="text-sm text-muted-foreground">от стоимости</div>
-              </div>
-              <div className="p-4">
-                <div className="text-3xl md:text-4xl font-bold text-gold mb-2">7 мин</div>
-                <div className="text-sm text-muted-foreground">оценка</div>
-              </div>
-              <div className="p-4">
-                <div className="text-3xl md:text-4xl font-bold text-gold mb-2">24/7</div>
-                <div className="text-sm text-muted-foreground">работаем</div>
+
+            {/* Hero Image */}
+            <div className="relative animate-fade-in">
+              <div className="relative rounded-2xl overflow-hidden shadow-[var(--shadow-gold)] border-2 border-gold/20">
+                <img 
+                  src={heroImage} 
+                  alt="Профессиональная оценка золота в ломбарде" 
+                  className="w-full h-auto"
+                />
               </div>
             </div>
           </div>
