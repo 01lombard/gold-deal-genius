@@ -1,6 +1,19 @@
 import { MapPin, Phone, Clock } from "lucide-react";
 
 const ContactSection = () => {
+  const locations = [
+    {
+      name: "01 Market - Есенберлина",
+      address: "ул. Есенберлина 20, 01 market",
+      coords: [51.1282, 71.4318], // Astana coordinates
+    },
+    {
+      name: "01 Market - Байсеитовой",
+      address: "ул. К. Байсеитовой 103, 01 market",
+      coords: [51.1694, 71.4491],
+    },
+  ];
+
   return (
     <section className="py-16 px-4 bg-muted/30">
       <div className="max-w-6xl mx-auto">
@@ -11,13 +24,16 @@ const ContactSection = () => {
           Мы всегда рады помочь вам
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div className="flex flex-col items-center text-center p-6 rounded-xl bg-card border border-border/50">
             <div className="w-14 h-14 rounded-full bg-gradient-to-br from-gold/20 to-gold-light/20 flex items-center justify-center mb-4">
               <MapPin className="w-7 h-7 text-gold" />
             </div>
-            <h3 className="text-lg font-semibold mb-2">Адрес</h3>
-            <p className="text-muted-foreground">г. Алматы, ул. Примерная, д. 123</p>
+            <h3 className="text-lg font-semibold mb-2">Адреса</h3>
+            <div className="text-muted-foreground space-y-2">
+              <p className="text-sm">ул. Есенберлина 20, "01 market"</p>
+              <p className="text-sm">ул. К. Байсеитовой 103, "01 market"</p>
+            </div>
           </div>
 
           <div className="flex flex-col items-center text-center p-6 rounded-xl bg-card border border-border/50">
@@ -25,7 +41,9 @@ const ContactSection = () => {
               <Phone className="w-7 h-7 text-gold" />
             </div>
             <h3 className="text-lg font-semibold mb-2">Телефон</h3>
-            <p className="text-muted-foreground">+7 (777) 123-45-67</p>
+            <a href="tel:+77770399921" className="text-muted-foreground hover:text-gold transition-colors">
+              +7 (777) 039-99-21
+            </a>
           </div>
 
           <div className="flex flex-col items-center text-center p-6 rounded-xl bg-card border border-border/50">
@@ -35,6 +53,48 @@ const ContactSection = () => {
             <h3 className="text-lg font-semibold mb-2">Режим работы</h3>
             <p className="text-muted-foreground">Пн-Сб: 9:00 - 20:00<br />Вс: 10:00 - 18:00</p>
           </div>
+        </div>
+
+        {/* Map Section */}
+        <div className="rounded-2xl overflow-hidden border-2 border-gold/20 shadow-[var(--shadow-gold)]">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.1234567890!2d71.4318!3d51.1282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDA3JzQxLjUiTiA3McKwMjUnNTQuNSJF!5e0!3m2!1sru!2skz!4v1234567890"
+            width="100%"
+            height="450"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="01 ломбард - наши локации в Астане"
+          />
+        </div>
+
+        {/* Location Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          {locations.map((location, index) => (
+            <div
+              key={index}
+              className="p-6 rounded-xl bg-card border border-border/50 hover:border-gold/50 transition-all duration-300"
+            >
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold/20 to-gold-light/20 flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-5 h-5 text-gold" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-foreground mb-2">{location.name}</h4>
+                  <p className="text-muted-foreground text-sm mb-3">{location.address}</p>
+                  <a
+                    href={`https://www.google.com/maps?q=${location.coords[0]},${location.coords[1]}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gold hover:text-gold-light text-sm font-medium transition-colors inline-flex items-center gap-1"
+                  >
+                    Открыть на карте →
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
