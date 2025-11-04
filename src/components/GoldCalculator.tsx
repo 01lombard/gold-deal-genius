@@ -11,10 +11,10 @@ const goldPrices = {
   "999": 47000,
 };
 
-const currentDate = new Date().toLocaleDateString('ru-RU', { 
-  day: 'numeric', 
-  month: 'long', 
-  year: 'numeric' 
+const currentDate = new Date().toLocaleDateString("ru-RU", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
 });
 
 interface GoldCalculatorProps {
@@ -46,9 +46,7 @@ const GoldCalculator = ({ onPriceChange }: GoldCalculatorProps) => {
             Калькулятор приема золота
           </CardTitle>
         </div>
-        <CardDescription>
-          Рассчитайте стоимость вашего золота • Цены актуальны на {currentDate}
-        </CardDescription>
+        <CardDescription>Рассчитайте стоимость вашего золота • Цены актуальны на {currentDate}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="grid gap-4 md:grid-cols-2">
@@ -59,7 +57,7 @@ const GoldCalculator = ({ onPriceChange }: GoldCalculatorProps) => {
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="585">585 проба (28,500 ₸/г)</SelectItem>
+                <SelectItem value="585">585 проба (37,500 ₸/г)</SelectItem>
                 <SelectItem value="750">750 проба (36,500 ₸/г)</SelectItem>
                 <SelectItem value="999">999 проба (47,000 ₸/г)</SelectItem>
               </SelectContent>
@@ -83,9 +81,7 @@ const GoldCalculator = ({ onPriceChange }: GoldCalculatorProps) => {
         <div className="rounded-lg bg-gradient-to-br from-gold/10 to-gold-light/10 p-6 border border-gold/20">
           <div className="flex justify-between items-center">
             <span className="text-lg text-muted-foreground">Сумма оценки:</span>
-            <span className="text-3xl font-bold text-gold">
-              {totalPrice.toLocaleString('ru-KZ')} ₸
-            </span>
+            <span className="text-3xl font-bold text-gold">{totalPrice.toLocaleString("ru-KZ")} ₸</span>
           </div>
         </div>
 
