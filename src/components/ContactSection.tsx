@@ -4,12 +4,12 @@ const ContactSection = () => {
   const locations = [
     {
       name: "01 Market - Есенберлина",
-      address: "ул. Есенберлина 20, 01 market",
+      address: "город Астана, ул. Есенберлина 20, 01 market",
       coords: [51.1282, 71.4318], // Astana coordinates
     },
     {
       name: "01 Market - Байсеитовой",
-      address: "ул. К. Байсеитовой 103, 01 market",
+      address: "город Астана, ул. К. Байсеитовой 103, 01 market",
       coords: [51.1694, 71.4491],
     },
   ];
@@ -31,8 +31,8 @@ const ContactSection = () => {
             </div>
             <h3 className="text-lg font-semibold mb-2">Адреса</h3>
             <div className="text-muted-foreground space-y-2">
-              <p className="text-sm">ул. Есенберлина 20, "01 market"</p>
-              <p className="text-sm">ул. К. Байсеитовой 103, "01 market"</p>
+              <p className="text-sm">город Астана, ул. Есенберлина 20, "01 market"</p>
+              <p className="text-sm">город Астана, ул. К. Байсеитовой 103, "01 market"</p>
             </div>
           </div>
 
@@ -53,20 +53,6 @@ const ContactSection = () => {
             <h3 className="text-lg font-semibold mb-2">Режим работы</h3>
             <p className="text-muted-foreground">Круглосуточно,<br />без перерывов и выходных</p>
           </div>
-        </div>
-
-        {/* Map Section */}
-        <div className="rounded-2xl overflow-hidden border-2 border-gold/20 shadow-[var(--shadow-gold)]">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.1234567890!2d71.4318!3d51.1282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDA3JzQxLjUiTiA3McKwMjUnNTQuNSJF!5e0!3m2!1sru!2skz!4v1234567890"
-            width="100%"
-            height="450"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="01 ломбард - наши локации в Астане"
-          />
         </div>
 
         {/* Location Cards */}
