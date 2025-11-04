@@ -82,7 +82,7 @@ const GoldCalculator = ({ onPriceChange }: GoldCalculatorProps) => {
 
         <div className="rounded-lg bg-gradient-to-br from-gold/10 to-gold-light/10 p-6 border border-gold/20">
           <div className="flex justify-between items-center">
-            <span className="text-lg text-muted-foreground">Сумма выкупа:</span>
+            <span className="text-lg text-muted-foreground">Сумма оценки:</span>
             <span className="text-3xl font-bold text-gold">
               {totalPrice.toLocaleString('ru-KZ')} ₸
             </span>

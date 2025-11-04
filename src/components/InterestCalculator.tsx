@@ -96,7 +96,7 @@ const InterestCalculator = ({ amount: externalAmount = 0 }: InterestCalculatorPr
 
         <div className="rounded-lg bg-gradient-to-br from-gold/10 to-gold-light/10 p-6 border border-gold/20">
           <div className="flex justify-between items-center">
-            <span className="text-lg text-muted-foreground">Итого к выплате:</span>
+            <span className="text-lg text-muted-foreground">Сумма на выкуп:</span>
             <span className="text-3xl font-bold text-gold">
               {total.toLocaleString('ru-KZ', { maximumFractionDigits: 2 })} ₸
             </span>
