@@ -56,7 +56,7 @@ const Index = () => {
                 </a>
                 <a
                   href="#calculators"
-                  className="px-8 py-4 rounded-lg bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-all duration-300 font-semibold text-lg hover:scale-105 animate-pulse hover:animate-none shadow-lg"
+                  className="px-8 py-4 rounded-lg bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-all duration-500 font-semibold text-lg animate-[scale-in_2s_ease-in-out_infinite] hover:scale-110 hover:shadow-[var(--shadow-gold)] shadow-lg"
                 >
                   Рассчитать стоимость
                 </a>
