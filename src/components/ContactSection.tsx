@@ -51,7 +51,7 @@ const ContactSection = () => {
               <Clock className="w-7 h-7 text-gold" />
             </div>
             <h3 className="text-lg font-semibold mb-2">Режим работы</h3>
-            <p className="text-muted-foreground">Пн-Сб: 9:00 - 20:00<br />Вс: 10:00 - 18:00</p>
+            <p className="text-muted-foreground">Круглосуточно,<br />без перерывов и выходных</p>
           </div>
         </div>
 
