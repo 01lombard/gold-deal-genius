@@ -57,7 +57,7 @@ const GoldCalculator = ({ onPriceChange }: GoldCalculatorProps) => {
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="585">585 проба (28,500 ₸/г)</SelectItem>
+                <SelectItem value="585">585 проба (37,500 ₸/г)</SelectItem>
                 <SelectItem value="750">750 проба (36,500 ₸/г)</SelectItem>
                 <SelectItem value="999">999 проба (47,000 ₸/г)</SelectItem>
               </SelectContent>
