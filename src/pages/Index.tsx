@@ -29,10 +29,10 @@ const Index = () => {
           </div>
         <a 
           href="tel:+77770399921" 
-          className="px-4 py-2 rounded-lg bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-colors font-medium text-sm"
+          className="px-3 md:px-4 py-2 rounded-lg bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-colors font-medium text-xs md:text-sm"
         >
           +7 (777) 039-99-21
-          </a>
+        </a>
         </div>
       </header>
 
