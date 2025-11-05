@@ -23,7 +23,7 @@ const Index = () => {
               className="w-12 h-12 rounded-full object-cover"
             />
             <div>
-              <h1 className="text-xl font-bold text-foreground">01 ломбард</h1>
+              <h1 className="text-base md:text-xl font-bold text-foreground">01 ломбард</h1>
               <p className="text-xs text-muted-foreground">Надежность и выгода</p>
             </div>
           </div>
