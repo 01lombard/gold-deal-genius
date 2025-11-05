@@ -105,7 +105,7 @@ const InterestCalculator = ({ amount: externalAmount = 0 }: InterestCalculatorPr
 
         <div className="text-sm text-muted-foreground space-y-2 p-4 bg-muted/20 rounded-lg">
           <p className="font-medium text-foreground">ℹ️ Важная информация:</p>
-          <p>• Гарантийный срок: 30 дней</p>
+          <p className="font-bold text-foreground">• Гарантийный срок 30 дней по 0.25%</p>
           <p>• До 100 000 ₸: 0.25% в день</p>
           <p>• Свыше 100 000 ₸: 0.19% в день</p>
           <p>• Досрочное погашение без штрафов</p>
