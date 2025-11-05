@@ -5,8 +5,8 @@ import ServicesSection from "@/components/ServicesSection";
 import ContactSection from "@/components/ContactSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
-import { Gem } from "lucide-react";
 import heroImage from "@/assets/hero-image.png";
+import logo from "@/assets/logo.jpeg";
 
 const Index = () => {
   const [goldPrice, setGoldPrice] = useState(0);
@@ -16,15 +16,17 @@ const Index = () => {
       {/* Header */}
       <header className="border-b border-border/50 bg-card/50 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gold to-gold-light flex items-center justify-center">
-              <Gem className="w-6 h-6 text-white" />
-            </div>
+          <div className="flex items-center gap-3">
+            <img 
+              src={logo} 
+              alt="01 ломбард логотип" 
+              className="w-12 h-12 rounded-full object-cover"
+            />
             <div>
-            <h1 className="text-xl font-bold text-foreground">01 ломбард</h1>
-            <p className="text-xs text-muted-foreground">Надежность и выгода</p>
+              <h1 className="text-xl font-bold text-foreground">01 ломбард</h1>
+              <p className="text-xs text-muted-foreground">Надежность и выгода</p>
+            </div>
           </div>
-        </div>
         <a 
           href="tel:+77770399921" 
           className="px-4 py-2 rounded-lg bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-colors font-medium text-sm"
