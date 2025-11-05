@@ -3,14 +3,14 @@ import { MapPin, Phone, Clock } from "lucide-react";
 const ContactSection = () => {
   const locations = [
     {
-      name: "01 Market - Есенберлина",
-      address: "город Астана, ул. Есенберлина 20, 01 market",
-      coords: [51.1282, 71.4318], // Astana coordinates
+      name: "Филиал Есенберлина",
+      address: "город Астана, ул. Есенберлина 20",
+      mapLink: "https://2giskz.app/astana/geo/70000001054951722",
     },
     {
-      name: "01 Market - Байсеитовой",
-      address: "город Астана, ул. К. Байсеитовой 103, 01 market",
-      coords: [51.1694, 71.4491],
+      name: "Филиал Байсеитовой",
+      address: "город Астана, ул. К. Байсеитовой 103",
+      mapLink: "https://2giskz.app/astana/geo/70000001055231611",
     },
   ];
 
@@ -31,8 +31,8 @@ const ContactSection = () => {
             </div>
             <h3 className="text-lg font-semibold mb-2">Адреса</h3>
             <div className="text-muted-foreground space-y-2">
-              <p className="text-sm">город Астана, ул. Есенберлина 20, "01 market"</p>
-              <p className="text-sm">город Астана, ул. К. Байсеитовой 103, "01 market"</p>
+              <p className="text-sm">город Астана, ул. Есенберлина 20</p>
+              <p className="text-sm">город Астана, ул. К. Байсеитовой 103</p>
             </div>
           </div>
 
@@ -70,7 +70,7 @@ const ContactSection = () => {
                   <h4 className="font-semibold text-foreground mb-2">{location.name}</h4>
                   <p className="text-muted-foreground text-sm mb-3">{location.address}</p>
                   <a
-                    href={`https://www.google.com/maps?q=${location.coords[0]},${location.coords[1]}`}
+                    href={location.mapLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gold hover:text-gold-light text-sm font-medium transition-colors inline-flex items-center gap-1"
