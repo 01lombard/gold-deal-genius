@@ -29,16 +29,19 @@ const BenefitsSection = () => {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="flex items-center gap-3 p-4 rounded-lg bg-card border border-border/50 hover:border-gold/50 hover:shadow-[var(--shadow-gold)] transition-all duration-300 group"
+              className="flex items-center gap-3 p-4 rounded-lg bg-card border border-border/50 hover:border-gold/50 hover:shadow-[var(--shadow-gold)] transition-all duration-500 group hover:scale-[1.02]"
             >
-              <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 animate-fade-in">
                 <img 
                   src={benefit.icon} 
                   alt="" 
-                  className="w-full h-full object-contain animate-fade-in"
+                  className="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(218,165,32,0.3)] group-hover:drop-shadow-[0_0_25px_rgba(218,165,32,0.6)]"
+                  style={{
+                    animation: `fade-in 0.6s ease-out ${index * 0.1}s both`
+                  }}
                 />
               </div>
-              <span className="text-foreground font-medium">{benefit.text}</span>
+              <span className="text-foreground font-medium group-hover:text-gold transition-colors duration-300">{benefit.text}</span>
             </div>
           ))}
         </div>
