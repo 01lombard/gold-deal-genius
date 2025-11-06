@@ -1,12 +1,17 @@
-import { CheckCircle2 } from "lucide-react";
+import benefitTimeIcon from "@/assets/benefit-time.png";
+import benefitCashIcon from "@/assets/benefit-cash.png";
+import benefit247Icon from "@/assets/benefit-247.png";
+import benefitValueIcon from "@/assets/benefit-value.png";
+import benefitSecurityIcon from "@/assets/benefit-security.png";
+import benefitLocationIcon from "@/assets/benefit-location.png";
 
 const benefits = [
-  "Оценка за 7-15 минут",
-  "Выплата сразу наличными",
-  "Работаем круглосуточно, без перерывов и выходных",
-  "Выкуп до 95% от стоимости",
-  "Конфиденциальность сделок",
-  "Удобное расположение",
+  { text: "Оценка за 7-15 минут", icon: benefitTimeIcon },
+  { text: "Выплата сразу наличными", icon: benefitCashIcon },
+  { text: "Работаем круглосуточно, без перерывов и выходных", icon: benefit247Icon },
+  { text: "Выкуп до 95% от стоимости", icon: benefitValueIcon },
+  { text: "Конфиденциальность сделок", icon: benefitSecurityIcon },
+  { text: "Удобное расположение", icon: benefitLocationIcon },
 ];
 
 const BenefitsSection = () => {
@@ -24,12 +29,16 @@ const BenefitsSection = () => {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="flex items-center gap-3 p-4 rounded-lg bg-card border border-border/50 hover:border-gold/50 hover:shadow-[var(--shadow-gold)] transition-all duration-300"
+              className="flex items-center gap-3 p-4 rounded-lg bg-card border border-border/50 hover:border-gold/50 hover:shadow-[var(--shadow-gold)] transition-all duration-300 group"
             >
-              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-gold/20 to-gold-light/20 flex items-center justify-center">
-                <CheckCircle2 className="w-5 h-5 text-gold" />
+              <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <img 
+                  src={benefit.icon} 
+                  alt="" 
+                  className="w-full h-full object-contain animate-fade-in"
+                />
               </div>
-              <span className="text-foreground font-medium">{benefit}</span>
+              <span className="text-foreground font-medium">{benefit.text}</span>
             </div>
           ))}
         </div>
