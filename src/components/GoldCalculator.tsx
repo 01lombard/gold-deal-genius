@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import * as React from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -11,19 +12,20 @@ const goldPrices = {
   "999": 47000,
 };
 
-const currentDate = new Date().toLocaleDateString("ru-RU", {
-  day: "numeric",
-  month: "long",
-  year: "numeric",
-});
-
 interface GoldCalculatorProps {
   onPriceChange?: (price: number) => void;
 }
 
 const GoldCalculator = ({ onPriceChange }: GoldCalculatorProps) => {
+  const { t, language } = useLanguage();
   const [weight, setWeight] = useState("");
   const [purity, setPurity] = useState<keyof typeof goldPrices>("585");
+
+  const currentDate = new Date().toLocaleDateString(language === 'ru' ? "ru-RU" : "kk-KZ", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
 
   const calculatePrice = () => {
     const weightNum = parseFloat(weight);
@@ -33,7 +35,6 @@ const GoldCalculator = ({ onPriceChange }: GoldCalculatorProps) => {
 
   const totalPrice = calculatePrice();
 
-  // Update parent component when price changes
   React.useEffect(() => {
     onPriceChange?.(totalPrice);
   }, [totalPrice, onPriceChange]);
@@ -43,28 +44,28 @@ const GoldCalculator = ({ onPriceChange }: GoldCalculatorProps) => {
       <CardHeader className="space-y-2">
         <div className="flex items-center justify-between">
           <CardTitle className="text-2xl bg-gradient-to-r from-gold to-gold-light bg-clip-text text-transparent">
-            Калькулятор приема золота
+            {t.calculators.gold.title}
           </CardTitle>
         </div>
-        <CardDescription>Рассчитайте стоимость вашего золота • Цены актуальны на {currentDate}</CardDescription>
+        <CardDescription>{t.calculators.gold.description} {currentDate}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="grid gap-4 md:grid-cols-2">
           <div className="space-y-2">
-            <Label htmlFor="purity">Проба золота</Label>
+            <Label htmlFor="purity">{t.calculators.gold.purityLabel}</Label>
             <Select value={purity} onValueChange={(value) => setPurity(value as keyof typeof goldPrices)}>
               <SelectTrigger id="purity" className="border-border/50 focus:ring-gold">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="585">585 проба (37,500 ₸/г)</SelectItem>
-                <SelectItem value="750">750 проба (36,500 ₸/г)</SelectItem>
-                <SelectItem value="999">999 проба (47,000 ₸/г)</SelectItem>
+                <SelectItem value="585">585 {language === 'ru' ? 'проба' : 'сынама'} (37,500 ₸/{language === 'ru' ? 'г' : 'г'})</SelectItem>
+                <SelectItem value="750">750 {language === 'ru' ? 'проба' : 'сынама'} (36,500 ₸/{language === 'ru' ? 'г' : 'г'})</SelectItem>
+                <SelectItem value="999">999 {language === 'ru' ? 'проба' : 'сынама'} (47,000 ₸/{language === 'ru' ? 'г' : 'г'})</SelectItem>
               </SelectContent>
             </Select>
           </div>
           <div className="space-y-2">
-            <Label htmlFor="weight">Вес (граммы)</Label>
+            <Label htmlFor="weight">{t.calculators.gold.weightLabel}</Label>
             <Input
               id="weight"
               type="number"
@@ -80,17 +81,17 @@ const GoldCalculator = ({ onPriceChange }: GoldCalculatorProps) => {
 
         <div className="rounded-lg bg-gradient-to-br from-gold/10 to-gold-light/10 p-6 border border-gold/20">
           <div className="flex justify-between items-center">
-            <span className="text-lg text-muted-foreground">Сумма оценки:</span>
-            <span className="text-3xl font-bold text-gold">{totalPrice.toLocaleString("ru-KZ")} ₸</span>
+            <span className="text-lg text-muted-foreground">{t.calculators.gold.totalLabel}</span>
+            <span className="text-3xl font-bold text-gold">{totalPrice.toLocaleString(language === 'ru' ? "ru-KZ" : "kk-KZ")} ₸</span>
           </div>
         </div>
 
         <div className="text-sm text-muted-foreground space-y-2 p-4 bg-muted/20 rounded-lg">
-          <p className="font-medium text-foreground">ℹ️ Важная информация:</p>
-          <p>• Цены обновляются ежедневно</p>
-          <p>• Финальная оценка после проверки изделия</p>
-          <p>• Оплата сразу после оценки</p>
-          <p>• Требуется документ, удостоверяющий личность</p>
+          <p className="font-medium text-foreground">{t.calculators.gold.info.title}</p>
+          <p>{t.calculators.gold.info.point1}</p>
+          <p>{t.calculators.gold.info.point2}</p>
+          <p>{t.calculators.gold.info.point3}</p>
+          <p>{t.calculators.gold.info.point4}</p>
         </div>
       </CardContent>
     </Card>

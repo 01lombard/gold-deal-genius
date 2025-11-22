@@ -1,15 +1,18 @@
+import { useLanguage } from "@/contexts/LanguageContext";
 import { MapPin, Phone, Clock } from "lucide-react";
 
 const ContactSection = () => {
+  const { t } = useLanguage();
+
   const locations = [
     {
-      name: "Филиал Есенберлина",
-      address: "город Астана, ул. Есенберлина 20",
+      name: t.contact.branches.esenberlin,
+      address: t.contact.address.location1,
       mapLink: "https://2giskz.app/astana/geo/70000001054951722",
     },
     {
-      name: "Филиал Байсеитовой",
-      address: "город Астана, ул. К. Байсеитовой 103",
+      name: t.contact.branches.baiseitova,
+      address: t.contact.address.location2,
       mapLink: "https://2giskz.app/astana/geo/70000001055231611",
     },
   ];
@@ -18,10 +21,10 @@ const ContactSection = () => {
     <section className="py-16 px-4 bg-muted/30">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 bg-gradient-to-r from-gold to-gold-light bg-clip-text text-transparent">
-          Контакты
+          {t.contact.title}
         </h2>
         <p className="text-center text-muted-foreground mb-12">
-          Мы всегда рады помочь вам
+          {t.contact.subtitle}
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -29,10 +32,10 @@ const ContactSection = () => {
             <div className="w-14 h-14 rounded-full bg-gradient-to-br from-gold/20 to-gold-light/20 flex items-center justify-center mb-4">
               <MapPin className="w-7 h-7 text-gold" />
             </div>
-            <h3 className="text-lg font-semibold mb-2">Адреса</h3>
+            <h3 className="text-lg font-semibold mb-2">{t.contact.address.title}</h3>
             <div className="text-muted-foreground space-y-2">
-              <p className="text-sm">город Астана, ул. Есенберлина 20</p>
-              <p className="text-sm">город Астана, ул. К. Байсеитовой 103</p>
+              <p className="text-sm">{t.contact.address.location1}</p>
+              <p className="text-sm">{t.contact.address.location2}</p>
             </div>
           </div>
 
@@ -40,7 +43,7 @@ const ContactSection = () => {
             <div className="w-14 h-14 rounded-full bg-gradient-to-br from-gold/20 to-gold-light/20 flex items-center justify-center mb-4">
               <Phone className="w-7 h-7 text-gold" />
             </div>
-            <h3 className="text-lg font-semibold mb-2">Телефон</h3>
+            <h3 className="text-lg font-semibold mb-2">{t.contact.phone.title}</h3>
             <a href="tel:+77770399921" className="text-muted-foreground hover:text-gold transition-colors">
               +7 (777) 039-99-21
             </a>
@@ -50,8 +53,8 @@ const ContactSection = () => {
             <div className="w-14 h-14 rounded-full bg-gradient-to-br from-gold/20 to-gold-light/20 flex items-center justify-center mb-4">
               <Clock className="w-7 h-7 text-gold" />
             </div>
-            <h3 className="text-lg font-semibold mb-2">Режим работы</h3>
-            <p className="text-muted-foreground">Круглосуточно,<br />без перерывов и выходных</p>
+            <h3 className="text-lg font-semibold mb-2">{t.contact.schedule.title}</h3>
+            <p className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: t.contact.schedule.time }} />
           </div>
         </div>
 
@@ -75,7 +78,7 @@ const ContactSection = () => {
                     rel="noopener noreferrer"
                     className="text-gold hover:text-gold-light text-sm font-medium transition-colors inline-flex items-center gap-1"
                   >
-                    Открыть на карте →
+                    {t.contact.branches.openMap}
                   </a>
                 </div>
               </div>
