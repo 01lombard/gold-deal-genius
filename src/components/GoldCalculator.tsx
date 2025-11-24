@@ -7,9 +7,9 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const goldPrices = {
-  "585": 37500,
-  "750": 36500,
-  "999": 47000,
+  "585": 37740,
+  "750": 47260,
+  "999": 55770,
 };
 
 interface GoldCalculatorProps {
@@ -21,7 +21,7 @@ const GoldCalculator = ({ onPriceChange }: GoldCalculatorProps) => {
   const [weight, setWeight] = useState("");
   const [purity, setPurity] = useState<keyof typeof goldPrices>("585");
 
-  const currentDate = new Date().toLocaleDateString(language === 'ru' ? "ru-RU" : "kk-KZ", {
+  const currentDate = new Date().toLocaleDateString(language === "ru" ? "ru-RU" : "kk-KZ", {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -47,7 +47,9 @@ const GoldCalculator = ({ onPriceChange }: GoldCalculatorProps) => {
             {t.calculators.gold.title}
           </CardTitle>
         </div>
-        <CardDescription>{t.calculators.gold.description} {currentDate}</CardDescription>
+        <CardDescription>
+          {t.calculators.gold.description} {currentDate}
+        </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="grid gap-4 md:grid-cols-2">
@@ -58,9 +60,15 @@ const GoldCalculator = ({ onPriceChange }: GoldCalculatorProps) => {
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="585">585 {language === 'ru' ? 'проба' : 'сынама'} (37,500 ₸/{language === 'ru' ? 'г' : 'г'})</SelectItem>
-                <SelectItem value="750">750 {language === 'ru' ? 'проба' : 'сынама'} (36,500 ₸/{language === 'ru' ? 'г' : 'г'})</SelectItem>
-                <SelectItem value="999">999 {language === 'ru' ? 'проба' : 'сынама'} (47,000 ₸/{language === 'ru' ? 'г' : 'г'})</SelectItem>
+                <SelectItem value="585">
+                  585 {language === "ru" ? "проба" : "сынама"} (37,500 ₸/{language === "ru" ? "г" : "г"})
+                </SelectItem>
+                <SelectItem value="750">
+                  750 {language === "ru" ? "проба" : "сынама"} (36,500 ₸/{language === "ru" ? "г" : "г"})
+                </SelectItem>
+                <SelectItem value="999">
+                  999 {language === "ru" ? "проба" : "сынама"} (47,000 ₸/{language === "ru" ? "г" : "г"})
+                </SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -82,7 +90,9 @@ const GoldCalculator = ({ onPriceChange }: GoldCalculatorProps) => {
         <div className="rounded-lg bg-gradient-to-br from-gold/10 to-gold-light/10 p-6 border border-gold/20">
           <div className="flex justify-between items-center">
             <span className="text-lg text-muted-foreground">{t.calculators.gold.totalLabel}</span>
-            <span className="text-3xl font-bold text-gold">{totalPrice.toLocaleString(language === 'ru' ? "ru-KZ" : "kk-KZ")} ₸</span>
+            <span className="text-3xl font-bold text-gold">
+              {totalPrice.toLocaleString(language === "ru" ? "ru-KZ" : "kk-KZ")} ₸
+            </span>
           </div>
         </div>
 
