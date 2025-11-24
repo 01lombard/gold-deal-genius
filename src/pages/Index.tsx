@@ -7,6 +7,7 @@ import ContactSection from "@/components/ContactSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import WhatsAppWidget from "@/components/WhatsAppWidget";
 import heroImage from "@/assets/hero-image.png";
 import logo from "@/assets/logo.jpeg";
 
@@ -140,6 +141,9 @@ const Index = () => {
           <p>{t.footer.copyright}</p>
         </div>
       </footer>
+
+      {/* WhatsApp Widget */}
+      <WhatsAppWidget />
     </div>
   );
 };
