@@ -61,13 +61,13 @@ const GoldCalculator = ({ onPriceChange }: GoldCalculatorProps) => {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="585">
-                  585 {language === "ru" ? "проба" : "сынама"} (37,500 ₸/{language === "ru" ? "г" : "г"})
+                  585 {language === "ru" ? "проба" : "сынама"} (37,740 ₸/{language === "ru" ? "г" : "г"})
                 </SelectItem>
                 <SelectItem value="750">
-                  750 {language === "ru" ? "проба" : "сынама"} (36,500 ₸/{language === "ru" ? "г" : "г"})
+                  750 {language === "ru" ? "проба" : "сынама"} (47,260 ₸/{language === "ru" ? "г" : "г"})
                 </SelectItem>
                 <SelectItem value="999">
-                  999 {language === "ru" ? "проба" : "сынама"} (47,000 ₸/{language === "ru" ? "г" : "г"})
+                  999 {language === "ru" ? "проба" : "сынама"} (55,770 ₸/{language === "ru" ? "г" : "г"})
                 </SelectItem>
               </SelectContent>
             </Select>
