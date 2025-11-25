@@ -89,5 +89,28 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     font-family: 'Century Gothic', 'CenturyGothic', 'AppleGothic', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Improve mobile tap targets */
+  button, a, [role="button"] {
+    @apply min-h-[44px];
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Prevent text size adjustment on mobile */
+  body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Better touch scrolling on iOS */
+  * {
+    -webkit-tap-highlight-color: transparent;
   }
 }
