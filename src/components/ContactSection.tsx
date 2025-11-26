@@ -1,6 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { MapPin, Phone, Clock, Instagram } from "lucide-react";
-import tiktokIcon from "@/assets/tiktok-icon.png";
+import { MapPin, Phone, Clock, Instagram, Music } from "lucide-react";
 
 const ContactSection = () => {
   const { t } = useLanguage();
@@ -87,7 +86,7 @@ const ContactSection = () => {
                 className="p-2 hover:bg-accent rounded-lg transition-colors"
                 aria-label="TikTok"
               >
-                <img src={tiktokIcon} alt="TikTok" className="h-5 w-5" />
+                <Music className="h-5 w-5 text-gold" />
               </a>
             </div>
           </div>
