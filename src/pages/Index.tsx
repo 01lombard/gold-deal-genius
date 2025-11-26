@@ -8,6 +8,9 @@ import BenefitsSection from "@/components/BenefitsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
+import { Phone, Menu } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.png";
 import logo from "@/assets/logo.jpeg";
 
@@ -35,16 +38,76 @@ const Index = () => {
             <LanguageSwitcher />
             <a 
               href="tel:+77770399921" 
-              className="px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-lg bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-colors font-medium text-[10px] sm:text-xs md:text-sm whitespace-nowrap"
+              className="p-2 sm:p-2.5 rounded-lg bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-colors flex items-center justify-center"
+              title={t.header.phone}
             >
-              {t.header.phone}
+              <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
             </a>
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button 
+                  variant="ghost" 
+                  size="icon"
+                  className="p-2"
+                  title="Меню"
+                >
+                  <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[280px] sm:w-[320px]">
+                <nav className="flex flex-col gap-4 mt-8">
+                  <a 
+                    href="#hero" 
+                    className="text-lg font-medium hover:text-gold transition-colors py-2 border-b border-border/50"
+                  >
+                    {t.menu?.home || 'Главная'}
+                  </a>
+                  <a 
+                    href="#benefits" 
+                    className="text-lg font-medium hover:text-gold transition-colors py-2 border-b border-border/50"
+                  >
+                    {t.menu?.benefits || 'Преимущества'}
+                  </a>
+                  <a 
+                    href="#how-it-works" 
+                    className="text-lg font-medium hover:text-gold transition-colors py-2 border-b border-border/50"
+                  >
+                    {t.menu?.howItWorks || 'Как это работает'}
+                  </a>
+                  <a 
+                    href="#calculators" 
+                    className="text-lg font-medium hover:text-gold transition-colors py-2 border-b border-border/50"
+                  >
+                    {t.menu?.calculators || 'Калькуляторы'}
+                  </a>
+                  <a 
+                    href="#services" 
+                    className="text-lg font-medium hover:text-gold transition-colors py-2 border-b border-border/50"
+                  >
+                    {t.menu?.services || 'Услуги'}
+                  </a>
+                  <a 
+                    href="#contact" 
+                    className="text-lg font-medium hover:text-gold transition-colors py-2 border-b border-border/50"
+                  >
+                    {t.menu?.contact || 'Контакты'}
+                  </a>
+                  <a 
+                    href="tel:+77770399921" 
+                    className="mt-4 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-semibold text-center flex items-center justify-center gap-2"
+                  >
+                    <Phone className="w-5 h-5" />
+                    {t.header.phone}
+                  </a>
+                </nav>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gold/5 via-background to-secondary/5">
+      <section id="hero" className="relative overflow-hidden bg-gradient-to-br from-gold/5 via-background to-secondary/5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(212,175,55,0.1),transparent_50%)]" />
         <div className="relative max-w-7xl mx-auto px-3 sm:px-4 py-6 sm:py-8 md:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 items-center">

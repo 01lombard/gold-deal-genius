@@ -8,6 +8,16 @@ export interface Translations {
     phone: string;
   };
   
+  // Menu
+  menu: {
+    home: string;
+    benefits: string;
+    howItWorks: string;
+    calculators: string;
+    services: string;
+    contact: string;
+  };
+  
   // Hero Section
   hero: {
     title: string;
@@ -161,6 +171,14 @@ export const translations: Record<Language, Translations> = {
       subtitle: "Надежность и выгода",
       phone: "+7 (777) 039-99-21",
     },
+    menu: {
+      home: "Главная",
+      benefits: "Преимущества",
+      howItWorks: "Как это работает",
+      calculators: "Калькуляторы",
+      services: "Услуги",
+      contact: "Контакты",
+    },
     hero: {
       title: "Выгодный выкуп золота",
       subtitle: "Профессиональная оценка за 7 минут • Честные цены • Выплата сразу наличными",
@@ -298,6 +316,14 @@ export const translations: Record<Language, Translations> = {
       title: "01 ломбард",
       subtitle: "Сенімділік және тиімділік",
       phone: "+7 (777) 039-99-21",
+    },
+    menu: {
+      home: "Басты бет",
+      benefits: "Артықшылықтар",
+      howItWorks: "Бұл қалай жұмыс істейді",
+      calculators: "Калькуляторлар",
+      services: "Қызметтер",
+      contact: "Байланыс",
     },
     hero: {
       title: "Алтынды тиімді сатып алу",
