@@ -37,31 +37,6 @@ const Index = () => {
           </div>
           <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
             <LanguageSwitcher />
-            <a 
-              href="tel:+77770399921" 
-              className="p-1.5 hover:opacity-80 transition-opacity flex items-center justify-center"
-              title={t.header.phone}
-            >
-              <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-gold" />
-            </a>
-            <a 
-              href="https://www.instagram.com/01market.kz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-1.5 hover:opacity-80 transition-opacity flex items-center justify-center"
-              title="Instagram"
-            >
-              <Instagram className="w-5 h-5 sm:w-6 sm:h-6 text-gold" />
-            </a>
-            <a 
-              href="https://www.tiktok.com/@01market.kz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-1.5 hover:opacity-80 transition-opacity flex items-center justify-center"
-              title="TikTok"
-            >
-              <img src={tiktokIcon} alt="TikTok" className="w-5 h-5 sm:w-6 sm:h-6 object-contain" />
-            </a>
             <Sheet>
               <SheetTrigger asChild>
                 <Button 
@@ -111,13 +86,38 @@ const Index = () => {
                   >
                     {t.menu?.contact || 'Контакты'}
                   </a>
-                  <a 
-                    href="tel:+77770399921" 
-                    className="mt-4 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-semibold text-center flex items-center justify-center gap-2"
-                  >
-                    <Phone className="w-5 h-5" />
-                    {t.header.phone}
-                  </a>
+                  
+                  {/* Social Media Links */}
+                  <div className="mt-6 pt-4 border-t border-border/50">
+                    <p className="text-sm font-medium text-muted-foreground mb-3">Мы в социальных сетях</p>
+                    <div className="flex gap-4 justify-center">
+                      <a 
+                        href="tel:+77770399921" 
+                        className="p-3 bg-card hover:bg-gold/10 rounded-lg transition-all duration-300 hover:scale-110 border border-border/50"
+                        title={t.header.phone}
+                      >
+                        <Phone className="w-6 h-6 text-gold" />
+                      </a>
+                      <a 
+                        href="https://www.instagram.com/01market.kz"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 bg-card hover:bg-gold/10 rounded-lg transition-all duration-300 hover:scale-110 border border-border/50"
+                        title="Instagram"
+                      >
+                        <Instagram className="w-6 h-6 text-gold" />
+                      </a>
+                      <a 
+                        href="https://www.tiktok.com/@01market.kz"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 bg-card hover:bg-gold/10 rounded-lg transition-all duration-300 hover:scale-110 border border-border/50"
+                        title="TikTok"
+                      >
+                        <img src={tiktokIcon} alt="TikTok" className="w-6 h-6 object-contain" />
+                      </a>
+                    </div>
+                  </div>
                 </nav>
               </SheetContent>
             </Sheet>
