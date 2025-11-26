@@ -8,12 +8,11 @@ import BenefitsSection from "@/components/BenefitsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
-import { Phone, Menu, Instagram } from "lucide-react";
+import { Phone, Menu, Instagram, Music } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.png";
 import logo from "@/assets/logo.jpeg";
-import tiktokIcon from "@/assets/tiktok-icon.png";
 
 const Index = () => {
   const [goldPrice, setGoldPrice] = useState(0);
@@ -60,7 +59,7 @@ const Index = () => {
               className="p-1.5 hover:opacity-80 transition-opacity flex items-center justify-center"
               title="TikTok"
             >
-              <img src={tiktokIcon} alt="TikTok" className="w-5 h-5 sm:w-6 sm:h-6" />
+              <Music className="w-5 h-5 sm:w-6 sm:h-6 text-gold" />
             </a>
             <Sheet>
               <SheetTrigger asChild>
