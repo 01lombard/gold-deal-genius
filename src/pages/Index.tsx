@@ -57,28 +57,10 @@ const Index = () => {
                     {t.menu?.home || 'Главная'}
                   </a>
                   <a 
-                    href="#benefits" 
-                    className="text-lg font-medium hover:text-gold transition-colors py-2 border-b border-border/50"
-                  >
-                    {t.menu?.benefits || 'Преимущества'}
-                  </a>
-                  <a 
-                    href="#how-it-works" 
-                    className="text-lg font-medium hover:text-gold transition-colors py-2 border-b border-border/50"
-                  >
-                    {t.menu?.howItWorks || 'Как это работает'}
-                  </a>
-                  <a 
                     href="#calculators" 
                     className="text-lg font-medium hover:text-gold transition-colors py-2 border-b border-border/50"
                   >
                     {t.menu?.calculators || 'Калькуляторы'}
-                  </a>
-                  <a 
-                    href="#services" 
-                    className="text-lg font-medium hover:text-gold transition-colors py-2 border-b border-border/50"
-                  >
-                    {t.menu?.services || 'Услуги'}
                   </a>
                   <a 
                     href="#contact" 
@@ -89,7 +71,6 @@ const Index = () => {
                   
                   {/* Social Media Links */}
                   <div className="mt-6 pt-4 border-t border-border/50">
-                    <p className="text-sm font-medium text-muted-foreground mb-3">Мы в социальных сетях</p>
                     <div className="flex gap-4 justify-center">
                       <a 
                         href="tel:+77770399921" 
