@@ -57,6 +57,14 @@ const Index = () => {
                     {t.menu?.home || 'Главная'}
                   </a>
                   <a 
+                    href="https://01marketkz.tilda.ws/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg font-medium hover:text-gold transition-colors py-2 border-b border-border/50"
+                  >
+                    Каталог
+                  </a>
+                  <a 
                     href="#calculators" 
                     className="text-lg font-medium hover:text-gold transition-colors py-2 border-b border-border/50"
                   >
