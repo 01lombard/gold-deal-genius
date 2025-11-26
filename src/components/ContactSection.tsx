@@ -1,5 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { MapPin, Phone, Clock } from "lucide-react";
+import { MapPin, Phone, Clock, Instagram, Music } from "lucide-react";
 
 const ContactSection = () => {
   const { t } = useLanguage();
@@ -66,9 +66,29 @@ const ContactSection = () => {
               <Phone className="w-6 h-6 sm:w-7 sm:h-7 text-gold" />
             </div>
             <h3 className="text-base sm:text-lg font-semibold mb-2">{t.contact.phone.title}</h3>
-            <a href="tel:+77770399921" className="text-sm sm:text-base text-muted-foreground hover:text-gold transition-colors">
+            <a href="tel:+77770399921" className="text-sm sm:text-base text-muted-foreground hover:text-gold transition-colors mb-3">
               +7 (777) 039-99-21
             </a>
+            <div className="flex items-center gap-3">
+              <a 
+                href="https://www.instagram.com/01market.kz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 hover:bg-accent rounded-lg transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-5 w-5 text-gold" />
+              </a>
+              <a 
+                href="https://www.tiktok.com/@01market.kz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 hover:bg-accent rounded-lg transition-colors"
+                aria-label="TikTok"
+              >
+                <Music className="h-5 w-5 text-gold" />
+              </a>
+            </div>
           </div>
 
           <div className="flex flex-col items-center text-center p-5 sm:p-6 rounded-xl bg-card border border-border/50 sm:col-span-2 md:col-span-1">
