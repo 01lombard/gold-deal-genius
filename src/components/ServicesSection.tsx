@@ -28,7 +28,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 px-3 sm:px-4">
+    <section id="services" className="py-12 sm:py-16 px-3 sm:px-4">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-3 sm:mb-4 bg-gradient-to-r from-gold to-gold-light bg-clip-text text-transparent px-2">
           {t.services.title}
