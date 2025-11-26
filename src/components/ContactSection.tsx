@@ -32,10 +32,32 @@ const ContactSection = () => {
             <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-gold/20 to-gold-light/20 flex items-center justify-center mb-3 sm:mb-4">
               <MapPin className="w-6 h-6 sm:w-7 sm:h-7 text-gold" />
             </div>
-            <h3 className="text-base sm:text-lg font-semibold mb-2">{t.contact.address.title}</h3>
-            <div className="text-muted-foreground space-y-2">
-              <p className="text-xs sm:text-sm leading-relaxed">{t.contact.address.location1}</p>
-              <p className="text-xs sm:text-sm leading-relaxed">{t.contact.address.location2}</p>
+            <h3 className="text-base sm:text-lg font-semibold mb-4">{t.contact.address.title}</h3>
+            <div className="text-muted-foreground space-y-4 w-full">
+              <div className="space-y-1">
+                <p className="text-xs sm:text-sm leading-relaxed font-medium text-foreground">{t.contact.branches.esenberlin}</p>
+                <p className="text-xs sm:text-sm leading-relaxed">{t.contact.address.location1}</p>
+                <a
+                  href={locations[0].mapLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gold hover:text-gold-light text-xs sm:text-sm font-medium transition-colors inline-block mt-1"
+                >
+                  {t.contact.branches.openMap}
+                </a>
+              </div>
+              <div className="space-y-1 pt-2 border-t border-border/50">
+                <p className="text-xs sm:text-sm leading-relaxed font-medium text-foreground">{t.contact.branches.baiseitova}</p>
+                <p className="text-xs sm:text-sm leading-relaxed">{t.contact.address.location2}</p>
+                <a
+                  href={locations[1].mapLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gold hover:text-gold-light text-xs sm:text-sm font-medium transition-colors inline-block mt-1"
+                >
+                  {t.contact.branches.openMap}
+                </a>
+              </div>
             </div>
           </div>
 
@@ -56,34 +78,6 @@ const ContactSection = () => {
             <h3 className="text-base sm:text-lg font-semibold mb-2">{t.contact.schedule.title}</h3>
             <p className="text-sm sm:text-base text-muted-foreground" dangerouslySetInnerHTML={{ __html: t.contact.schedule.time }} />
           </div>
-        </div>
-
-        {/* Location Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-6 sm:mt-8">
-          {locations.map((location, index) => (
-            <div
-              key={index}
-              className="p-5 sm:p-6 rounded-xl bg-card border border-border/50 hover:border-gold/50 transition-all duration-300"
-            >
-              <div className="flex items-start gap-3 sm:gap-4">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-gold/20 to-gold-light/20 flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-gold" />
-                </div>
-                <div className="min-w-0">
-                  <h4 className="font-semibold text-sm sm:text-base text-foreground mb-2">{location.name}</h4>
-                  <p className="text-muted-foreground text-xs sm:text-sm mb-3 leading-relaxed">{location.address}</p>
-                  <a
-                    href={location.mapLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gold hover:text-gold-light text-xs sm:text-sm font-medium transition-colors inline-flex items-center gap-1"
-                  >
-                    {t.contact.branches.openMap}
-                  </a>
-                </div>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>
