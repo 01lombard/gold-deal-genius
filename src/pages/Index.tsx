@@ -8,7 +8,7 @@ import BenefitsSection from "@/components/BenefitsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
-import { Phone, Menu } from "lucide-react";
+import { Phone, Menu, Instagram, Music } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.png";
@@ -42,6 +42,24 @@ const Index = () => {
               title={t.header.phone}
             >
               <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+            </a>
+            <a 
+              href="https://www.instagram.com/01market.kz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 sm:p-2.5 rounded-lg bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-colors flex items-center justify-center"
+              title="Instagram"
+            >
+              <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
+            </a>
+            <a 
+              href="https://www.tiktok.com/@01market.kz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 sm:p-2.5 rounded-lg bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-colors flex items-center justify-center"
+              title="TikTok"
+            >
+              <Music className="w-4 h-4 sm:w-5 sm:h-5" />
             </a>
             <Sheet>
               <SheetTrigger asChild>
