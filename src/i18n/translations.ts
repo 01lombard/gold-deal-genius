@@ -444,7 +444,7 @@ export const translations: Record<Language, Translations> = {
         title: "Телефон",
       },
       schedule: {
-        title: "Жұмыс режимі",
+        title: "Жұмыс уақыты",
         time: "Тәулік бойы,<br />үзіліссіз және демалыссыз",
       },
       branches: {
