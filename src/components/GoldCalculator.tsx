@@ -7,9 +7,9 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const goldPrices = {
-  "585": 37740,
-  "750": 47260,
-  "999": 55770,
+  "585": 38850,
+  "750": 48650,
+  "999": 67988,
 };
 
 interface GoldCalculatorProps {
@@ -54,7 +54,9 @@ const GoldCalculator = ({ onPriceChange }: GoldCalculatorProps) => {
       <CardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6">
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="space-y-2">
-            <Label htmlFor="purity" className="text-xs sm:text-sm">{t.calculators.gold.purityLabel}</Label>
+            <Label htmlFor="purity" className="text-xs sm:text-sm">
+              {t.calculators.gold.purityLabel}
+            </Label>
             <Select value={purity} onValueChange={(value) => setPurity(value as keyof typeof goldPrices)}>
               <SelectTrigger id="purity" className="border-border/50 focus:ring-gold text-xs sm:text-sm h-9 sm:h-10">
                 <SelectValue />
@@ -73,7 +75,9 @@ const GoldCalculator = ({ onPriceChange }: GoldCalculatorProps) => {
             </Select>
           </div>
           <div className="space-y-2">
-            <Label htmlFor="weight" className="text-xs sm:text-sm">{t.calculators.gold.weightLabel}</Label>
+            <Label htmlFor="weight" className="text-xs sm:text-sm">
+              {t.calculators.gold.weightLabel}
+            </Label>
             <Input
               id="weight"
               type="number"
