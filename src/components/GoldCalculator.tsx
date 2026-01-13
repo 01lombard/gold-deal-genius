@@ -7,9 +7,9 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const goldPrices = {
-  "585": 40180,
-  "750": 50318,
-  "999": 70319,
+  "585": 42180,
+  "750": 52820,
+  "999": 73815,
 };
 
 interface GoldCalculatorProps {
@@ -63,13 +63,13 @@ const GoldCalculator = ({ onPriceChange }: GoldCalculatorProps) => {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="585" className="text-xs sm:text-sm">
-                  585 {language === "ru" ? "проба" : "сынама"} (40,180 ₸/{language === "ru" ? "г" : "г"})
+                  585 {language === "ru" ? "проба" : "сынама"} (42 180 ₸/{language === "ru" ? "г" : "г"})
                 </SelectItem>
                 <SelectItem value="750" className="text-xs sm:text-sm">
-                  750 {language === "ru" ? "проба" : "сынама"} (50,318 ₸/{language === "ru" ? "г" : "г"})
+                  750 {language === "ru" ? "проба" : "сынама"} (52 820 ₸/{language === "ru" ? "г" : "г"})
                 </SelectItem>
                 <SelectItem value="999" className="text-xs sm:text-sm">
-                  999 {language === "ru" ? "проба" : "сынама"} (70,319 ₸/{language === "ru" ? "г" : "г"})
+                  999 {language === "ru" ? "проба" : "сынама"} (73 815 ₸/{language === "ru" ? "г" : "г"})
                 </SelectItem>
               </SelectContent>
             </Select>
